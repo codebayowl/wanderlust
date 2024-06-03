@@ -1,0 +1,84 @@
+html, body {  
+    height: 100%;
+    width: 100%;
+  }
+  
+  html {
+    font-size: $basic;
+  }
+  
+  body {
+    background: $color-bg $bgimg;  
+    font-family: $sans-serif;
+    color: $color-primary;
+  }
+  header {
+    flex-grow: 0;
+    flex-shrink: 0;
+    //outline: $test;
+  }
+  main {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  aside {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 60px;
+  }
+  .wrapper {
+    display: flex;
+    flex-flow: column nowrap;  
+    min-height: 100%;
+    width: 100%;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  .content {
+    flex-grow: 1;
+    flex-shrink: 0;
+    //flex-basis: 60px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+  }
+  section {
+    flex-grow: 1;
+    flex-shrink: 0;
+    //outline: $test;
+  }
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  .container {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    @media screen and (min-width: 721px) and (max-width: 960px) {
+      width: 690px;
+    }
+    @media screen and (min-width: 961px) and (max-width: 1280px) {
+      width: 930px;
+    }
+    @media screen and (min-width: 1281px) and (max-width: 1920px) {
+      width: 1250px;
+    }
+    @media screen and (min-width: 1920px) {
+      width: 1880px;
+    }
+  }

@@ -1,0 +1,136 @@
+// E N V I R O N M E N T
+// text initialization
+a, p, h1, h2, h3, h4, h5, h6, blockquote {
+  font-size: $basic;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif;
+  //color: $color-main;
+  font-weight: bold;
+  line-height: 2em;
+  margin: $basic $basic 0 $basic;
+  // outline: $test;
+}
+h2, h3 {
+  color: $color-light;
+}
+h4, h5, h6 {
+  font-family: $sans-serif;
+  color: $color-dark;
+}
+h1 {
+  font-size: $basic * 2;
+  color: $color-light;
+}
+h2 {
+  font-size: $basic * 1.75;
+}
+h3 {
+  font-size: $basic * 1.5;
+}
+h4 {
+  font-size: $basic * 1.25;
+}
+h5 {
+  font-size: $basic * 1.125;
+}
+h6 {
+  font-size: $basic;
+}
+
+p {
+  text-indent: $basic * 2;
+  text-align: left;
+  margin: math.div($basic, 2) $basic;
+  line-height: $line-h; 
+}
+a {
+  text-indent: 0;
+  color: $color-light;
+  text-decoration: none;
+  &:hover {
+    color: $color-contrast;
+  }
+}
+blockquote {
+  color: $color-light;
+  margin: $basic $basic * 3;
+  padding: math.div($basic, 2) math.div($basic, 2) math.div($basic, 2) $basic;
+  border-left: math.div($basic, 4) solid $color-light;
+  font-style: italic;
+  border-top-right-radius: $basic;
+  border-bottom-right-radius: $basic;
+}
+img {
+  width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+}
+form {
+  margin: $basic;
+  padding: $basic;
+  margin-top: $basic * 2; // for ::after
+  position: relative; // for ::after
+  outline: 2px solid $color-bgdark;
+  border-radius: math.div($basic, 2);  
+  &::before {
+    position: absolute;
+    top: - math.div($line-h, 2) - math.div($basic, 8);
+    left: $line-h;
+    content: attr(caption);
+    display: inline-block;
+    height: $line-h;
+    font-size: $basic;
+    // font-weight: bold;
+    color: darken($color-bgdark, 30);
+    background-color: $color-bg;
+    padding: 0 math.div($basic, 2);
+    border: math.div($basic, 8) solid $color-bgdark;
+    border-radius: math.div($line-h, 2);    
+    //border-left: 2px solid $color-bgdark;
+  }
+}
+
+input {
+  display: block;
+  font-size: $basic;
+  vertical-align: top;
+  margin: math.div($basic, 2);
+  background-color: rgba(255,255,255,.2);
+  color: $color-primary;
+  padding: 0 $basic;
+  border-radius: math.div($basic, 4);
+  border: 1px solid $color-bgdark;
+  line-height: $basic * 2;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  transition: box-shadow .3s;
+  transition: border .3s;
+  transition: background-color .3s;
+  &:focus {
+    border: 1px solid #80bdff;
+    outline: 0;
+    box-shadow: 0 math.div($basic, 4) math.div($basic, 4) rgba(0, 123, 255, 0.25);
+    background-color: rgba(255,255,255,.5);
+  }
+}
+
+input[type=submit] {
+  display: inline-block;
+  background-color: rgb(31,57,72);
+  color: $color-bg;
+  box-shadow: 0 4px 4px rgba(31,57,72,.2);
+  border-color: $color-dark;
+  transition: background-color .2s;
+  &:hover {
+    background-color: $color-light;
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(18,126,155,.4);
+  }
+  &:active {
+    background-color: darken($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(18,126,155,.4);
+  }
+}

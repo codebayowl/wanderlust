@@ -1,0 +1,47 @@
+/********** VARIABLES AND MIXINS ***********/
+// V A R I A B L E S
+//colors
+$color-primary: #274056;
+$color-primarydark: #0c2132;
+$color-primarylight: #375a79;
+
+$color-secondary: #c39f6d;
+$color-secondarydark: #9c7347;
+$color-secondarylight: #e1d6c0;
+
+$color-aberration: #5e8880;
+
+$color-light: #4d6a00;
+$color-dark: #1f3834;
+$color-contrast: #B00020;
+$color-bg: #d8d9d2;
+$color-bgdark: #a6a8aa;
+//----------------
+$color-altprimary: #11613c;
+$color-altprimarydark: #0a3931;
+$color-altprimarylight: #9ab787;
+
+$color-altsecondary: #f9d40a;
+$color-altsecondarydark: #af8107;
+$color-altsecondarylight: #fdfb06;
+
+$color-altaberration: #d2b77f;
+
+$color-altlight: #085251;
+$color-altdark: #0c2833;
+$color-altcontrast: #B00020;
+$color-altbg: #d8d9d2;
+$color-altbgdark: #a6a8aa;
+//----------------
+$gradient-main: linear-gradient(to bottom, $color-light, lighten($color-primary, 10%) 48%, lighten($color-primary, 5%) 52%, $color-dark);
+$gradient-bg: linear-gradient(to bottom, white , $color-bg 49%, lighten($color-bgdark, 10%) 51%, $color-bgdark);
+$bgimg: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAKCAMAAABL52QCAAAABlBMVEXCw8Tp6uwFw7MwAAAAF0lEQVR4AWNgYAQCCMEAIoAQgkA8/LIABOwAKWIaZEkAAAAASUVORK5CYII=);
+//text
+$basic: 16px;
+$sans-serif: 'Segoe UI', Segoe, Arial, Verdana, sans-serif;
+$serif: "Times New Roman", Times, Georgia, serif;
+$line-h: 1.5 * $basic;
+//other
+$test: 1px dotted $color-contrast;
+
+/* MIXINS */

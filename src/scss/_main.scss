@@ -1,0 +1,326 @@
+/************ MAIN STYLES *************/
+
+[v-cloak] {
+  display: none;
+}
+
+
+.button-inline {
+  display: inline-block; // 2 lines - changing a type of an element...
+  vertical-align: baseline;   // ...from inline to inline-block.
+  height: $line-h; //vertical size of the block.
+  padding: 0 1em; //horizontal size - adding an extra space on edges.
+  line-height: $line-h; //vertical align of the text.
+  margin: 0 math.div($line-h, 2); //horizontal spaces in text block.
+  // And now decorating
+  background: $gradient-bg;
+  font-size: $basic;
+  font-family: $sans-serif;
+  color: $color-dark;
+  text-decoration: none;
+  border-radius: .5rem;
+  border: 1px solid white;
+  box-shadow: 0 0 .1rem $color-bgdark;
+  &:hover {
+    background: $gradient-main;
+    color: white;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    //left: 1px;
+    background: linear-gradient(to bottom, darken($color-light, 10%), lighten($color-primary, 5%) 48%, $color-primary 52%, $color-dark);
+    //box-shadow: -1px -1px .1rem $color-bgdark;
+    border-right-color: $color-bg;
+    border-bottom-color: $color-bg;
+  }
+}
+.button {
+  display: inline-block;
+  vertical-align: top;
+  margin: math.div($basic, 4);
+  background-color: rgba(233,234,236,.3);
+  color: $color-primary;
+  padding: 0 $basic;
+  border-radius: math.div($basic, 4);
+  border: 1px solid $color-bgdark;
+  line-height: $basic * 2;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  transition: background-color .2s;
+  &:hover {
+    background-color: lighten($color-bgdark, 10%);
+    box-shadow: 0 4px 6px rgba(0,0,0,.2);
+  }
+  &:active {
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    background-color: darken($color-bgdark, 10%);
+  }
+  // media-queries
+}
+.btn-primary {
+  background-color: rgb(31,57,72);
+  color: $color-bg;
+  box-shadow: 0 4px 4px rgba(31,57,72,.2);
+  border-color: $color-dark;
+  &:hover {
+    background-color: $color-light;
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(18,126,155,.4);
+  }
+  &:active {
+    background-color: darken($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(18,126,155,.4);
+  }
+}
+.btn-danger {
+  background-color: rgba(153,0,0,.3);
+  color: $color-contrast;
+  border-color: $color-contrast;
+  box-shadow: 0 4px 4px rgba(153,0,0,.2);
+  &:hover {
+    background-color: lighten($color-contrast, 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(153,0,0,.4);
+  }
+  &:active {
+    background-color: darken($color-contrast, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(153,0,0,.4);
+  }
+}
+.btn-info {
+  background-color: rgba(18,126,155,.3);
+  color: $color-light;
+  border-color: $color-light;
+  box-shadow: 0 4px 4px rgba(18,126,155,.2);
+  cursor: help;
+  &:hover {
+    background-color: lighten($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(18,126,155,.4);
+  }
+  &:active {
+    background-color: darken($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(18,126,155,.4);
+  }
+}
+.btn-success {
+  background-color: rgba(0,132,15,.3);
+  color: rgb(0,132,15);
+  border-color: rgb(0,132,15);
+  box-shadow: 0 4px 4px rgba(0,132,15,.2);
+  &:hover {
+    background-color: lighten(rgb(0,132,15), 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(0,132,15,.4);
+  }
+  &:active {
+    background-color: darken(rgb(0,132,15), 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(0,132,15,.4);
+  }
+}
+.btn-attention {
+  background-color: rgba(220,140,0,.3);
+  color: rgb(220,140,0);
+  border-color: rgb(220,140,0);
+  box-shadow: 0 4px 4px rgba(220,140,0,.2);
+  &:hover {
+    background-color: lighten(rgb(220,140,0), 10%);
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(220,140,0,.4);
+  }
+  &:active {
+    background-color: darken(rgb(220,140,0), 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(220,140,0,.4);
+  }
+}
+.btn-disabled {
+  background-color: rgba(233,234,236,.5);
+  color: $color-bgdark;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  cursor: not-allowed;
+  &:hover, &:active {
+    background-color: rgba(233,234,236,.5);
+    color: $color-bgdark;
+    box-shadow: 0 4px 4px rgba(0,0,0,.1);
+    cursor: not-allowed;
+  }
+}
+
+.img-article {
+  width: calc(100% - 24px);
+  margin: math.div($basic, 4) * 3;
+}
+.thumb {
+  width: calc(100% - 24px);
+  margin: math.div($basic, 2);
+  border-width: math.div($basic, 2);
+  border-style: solid;
+  border-color: white;
+  box-shadow: 0 0 math.div($basic, 2) rgba(0,0,0,.3);
+}
+.thumb-320 {
+  width: 288px;
+}
+.primary {
+  background-color: rgb(31,57,72);
+  color: $color-bg;
+  box-shadow: 0 4px 4px rgba(31,57,72,.2);
+  border-color: $color-dark;
+}
+.danger {
+  background-color: rgba(153,0,0,.3);
+  color: $color-contrast;
+  border-color: $color-contrast;
+  box-shadow: 0 4px 4px rgba(153,0,0,.2);
+}
+.info {
+  background-color: rgba(18,126,155,.3);
+  color: $color-light;
+  border-color: $color-light;
+  box-shadow: 0 4px 4px rgba(18,126,155,.2);
+  cursor: help;
+}
+.success {
+  background-color: rgba(0,132,15,.3);
+  color: rgb(0,132,15);
+  border-color: rgb(0,132,15);
+  box-shadow: 0 4px 4px rgba(0,132,15,.2);
+}
+.attention {
+  background-color: rgba(220,140,0,.3);
+  color: rgb(220,140,0);
+  border-color: rgb(220,140,0);
+  box-shadow: 0 4px 4px rgba(220,140,0,.2);
+}
+.disabled {
+  background-color: rgba(233,234,236,.5);
+  color: $color-bgdark;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1);
+  cursor: not-allowed;
+}
+
+
+
+// C O L O U R I N G
+
+header {
+  background-color: $color-primary;
+}
+
+footer {
+  background-color: $color-bgdark;
+}
+
+aside {
+  background-color: $color-bgdark;
+}
+
+.accordeon {
+  font-size: $basic;
+  display: flex;
+  flex-flow: row nowrap;  
+  justify-content: space-evenly;
+  //height: 100%;
+  width: 100%;
+  //min-width: 300px;
+  text-align: center;
+  //outline: $test;
+}
+.picker {
+  //flex-basis: 40px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.03), 0 0 0 5px rgba(255,255,255,0.22) inset;
+  transition: all .2s linear;
+  flex-grow: 0;
+  flex-shrink: 0;  
+  background-color: $color-primary;
+  margin: math.div($basic, 4);
+  &:hover {
+    box-shadow: 0 0 0 10px rgba(0,0,0,0.06), 0 0 0 0 rgba(255,255,255,0.22) inset;
+  }
+}
+.primdark {
+  background-color: $color-primarydark;
+}
+.prim {
+  background-color: $color-primary;
+  //outline: $basic/8 solid red;
+}
+.primlight {
+  background-color: $color-primarylight;
+}
+.secdark {
+  background-color: $color-secondarydark;
+}
+.sec {
+  background-color: $color-secondary;
+  //outline: $basic/8 solid red;
+}
+.seclight {
+  background-color: $color-secondarylight;
+}
+.aberration {
+  background-color: $color-aberration;
+}
+.contrast {
+  background-color: $color-contrast;
+}
+.light {
+  background-color: $color-light;
+}
+.dark {
+  background-color: $color-dark;
+}
+.bg {
+  background-color: $color-bg;
+}
+.bgdark {
+  background-color: $color-bgdark;
+}
+
+// Alternative colors
+.altprimdark {
+  background-color: $color-altprimarydark;
+}
+.altprim {
+  background-color: $color-altprimary;
+  //outline: $basic/8 solid red;
+}
+.altprimlight {
+  background-color: $color-altprimarylight;
+}
+.altsecdark {
+  background-color: $color-altsecondarydark;
+}
+.altsec {
+  background-color: $color-altsecondary;
+  //outline: $basic/8 solid red;
+}
+.altseclight {
+  background-color: $color-altsecondarylight;
+}
+.altaberration {
+  background-color: $color-altaberration;
+}
+.altcontrast {
+  background-color: $color-altcontrast;
+}
+.altlight {
+  background-color: $color-altlight;
+}
+.altdark {
+  background-color: $color-altdark;
+}
+.altbg {
+  background-color: $color-altbg;
+}
+.altbgdark {
+  background-color: $color-altbgdark;
+}
